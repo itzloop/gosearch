@@ -11,7 +11,7 @@
 
 ## Description
 
-Imagine you started a new go project and want to add some packages you have already know the name but don't know the actual address of it. Packages like gin, fiber, testify, json, uuid and ... . This script does excatly that. It searchs for the packages by their name without exiting the terminal and opening the browser.
+Imagine you started a new go project or working on an existing project and want to add some packages you already know the name of but don't know the actual address. Packages like gin, fiber, testify, json, uuid and ... . This script does exactly that. It searches for the packages by their name without exiting the terminal and opening the browser.
 
 ![Gosearch gif](./assets/gosearch.gif)
 

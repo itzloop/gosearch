@@ -34,7 +34,8 @@ if ! command -v pup &> /dev/null; then
 fi
 
 # Download the script only if previous checks passed
-GOSEARCH_PATH="/usr/share/zsh/functions/Zle/gosearch"
+GOSEARCH_PATH="$HOME/.local/share/zsh/zle/gosearch"
+mkdir -p $GOSEARCH_PATH
 echo "Downloading gosearch script..."
 curl -L "$SCRIPT_URL" -o $GOSEARCH_PATH && \
     chmod +x $GOSEARCH_PATH
