@@ -23,15 +23,14 @@ _gosearch () {
     else
         packages=$(echo -n $html \
             | pup '.SearchSnippet-header-path text{}' \
-            | sed -e 's/\///' \
-            |  sed -r 's/^\((.*)\)$/\1/g')
+            | sed -r 's/^\((.*)\)$/\1/g')
 
-        descriptions=$(echo -n $html \
-            | pup '.SearchSnippet-synopsis text{}' \
-            | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+        # descriptions=$(echo -n $html \
+        #     | pup '.SearchSnippet-synopsis text{}' \
+        #     | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
          
         IFS=$'\n' packages=($(echo -n $packages))
-        IFS=$'\n' descriptions=($(echo -n $descriptions))
+        # IFS=$'\n' descriptions=($(echo -n $descriptions))
 
         gosearch_debug "packages found: ${#packages[@]}"
 
