@@ -15,6 +15,7 @@ fi
 if [[ $SHELL != *"zsh"* ]]; then 
     echo "$SHELL is the default shell"
     echo "but zsh must be your defaul shell"
+    echo "chsh -s $(command -v zsh)"
     exit 1
 fi
 
