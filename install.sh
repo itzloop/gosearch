@@ -34,13 +34,24 @@ if ! command -v pup &> /dev/null; then
 fi
 
 # Download the script only if previous checks passed
-GOSEARCH_PATH="$HOME/.local/share/zsh/zle/gosearch"
+GOSEARCH_PATH="$HOME/.local/share/zsh/zle"
 mkdir -p $GOSEARCH_PATH
+GOSEARCH_PATH="$GOSEARCH_PATH/gosearch"
+ZSHFILE="$HOME/.zshrc"
+
 echo "Downloading gosearch script..."
-curl -L "$SCRIPT_URL" -o $GOSEARCH_PATH && \
+curl -sL "$SCRIPT_URL" -o $GOSEARCH_PATH && \
     chmod +x $GOSEARCH_PATH
 
-echo "source $GOSEARCH_PATH" >> "$HOME/.zshrc"
+
+SOURCE_LINE="source $GOSEARCH_PATH"
+
+if grep -q "$SOURCE_LINE" "$ZSHFILE"; then
+  echo "gosearch is already installed at: $GOSEARCH_PATH and sourced"
+  exit 0
+fi
+
+echo $SOURCE_LINE >> "$ZSHFILE"
 
 echo "Installation complete! gosearch can be found in: $GOSEARCH_PATH"
 echo "For the current shell you might need to source $GOSEARCH_PATH"
