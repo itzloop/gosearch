@@ -3,7 +3,7 @@
 set -e
 
 # Script URL
-script_url="https://raw.githubusercontent.com/itzloop/gosearch/main/gosearch"  # Replace with your actual script URL
+SCRIPT_URL="https://raw.githubusercontent.com/itzloop/gosearch/main/gosearch"  # Replace with your actual script URL
 
 # Check for zsh
 if ! which zsh &> /dev/null; then
@@ -36,8 +36,10 @@ fi
 # Download the script only if previous checks passed
 GOSEARCH_PATH="/usr/share/zsh/functions/Zle/gosearch"
 echo "Downloading gosearch script..."
-curl -L "$script_url" -o $GOSEARCH_PATH && \
+curl -L "$SCRIPT_URL" -o $GOSEARCH_PATH && \
     chmod +x $GOSEARCH_PATH
+
+echo "source $GOSEARCH_PATH" >> "$HOME/.zshrc"
 
 echo "Installation complete! gosearch can be found in: $GOSEARCH_PATH"
 echo "For the current shell you might need to source $GOSEARCH_PATH"
