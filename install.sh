@@ -3,7 +3,7 @@
 set -e
 
 # Script URL
-script_url="https://your_script_url.com/gosearch"  # Replace with your actual script URL
+script_url="https://raw.githubusercontent.com/itzloop/gosearch/main/gosearch"  # Replace with your actual script URL
 
 # Check for zsh
 if ! which zsh &> /dev/null; then

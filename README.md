@@ -19,7 +19,7 @@ Imagine you started a new go project and want to add some packages you have alre
 ## Installation
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/itzloop/gosearch/master/install.sh | bash
+curl -sSfL https://raw.githubusercontent.com/itzloop/gosearch/main/install.sh | bash
 ```
 
 ## Usage
